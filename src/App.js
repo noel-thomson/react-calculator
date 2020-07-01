@@ -11,6 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       result: "0",
+      completed: false,
     };
   }
 
@@ -22,11 +23,13 @@ class App extends React.Component {
       val = "/";
     }
     if (
-      this.state.result === "0" &&
+      (this.state.result === "0" || this.state.completed === true) &&
       (val === "/" || val === "*" || val === "-" || val === "+")
     )
       return;
-    if (this.state.result === "0" || this.state.result === 0) {
+    if (this.state.completed === true) {
+      this.setState({ result: val, completed: false });
+    } else if (this.state.result === "0" || this.state.result === 0) {
       this.setState({ result: val });
     } else {
       this.setState({ result: this.state.result + val });
@@ -40,6 +43,7 @@ class App extends React.Component {
     } else {
       this.setState({ result: evaluate(this.state.result).toFixed(2) });
     }
+    this.setState({ completed: true });
   };
 
   render() {
