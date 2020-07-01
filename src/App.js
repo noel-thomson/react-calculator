@@ -25,9 +25,9 @@ class App extends React.Component {
     if (
       (this.state.result === "0" || this.state.completed === true) &&
       (val === "/" || val === "*" || val === "-" || val === "+")
-    )
-      return;
-    if (this.state.completed === true) {
+    ) {
+      this.setState({ result: "0", completed: false });
+    } else if (this.state.completed === true) {
       this.setState({ result: val, completed: false });
     } else if (this.state.result === "0" || this.state.result === 0) {
       this.setState({ result: val });
