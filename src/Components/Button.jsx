@@ -22,6 +22,16 @@ class Button extends React.Component {
     if (e.key === this.props.children) {
       this.props.handleClick(this.props.children);
     }
+    if (e.key === "/" && this.props.children === String.fromCharCode(247)) {
+      e.preventDefault();
+      this.props.handleClick(this.props.children);
+    }
+    if (e.key === "*" && this.props.children === "x") {
+      this.props.handleClick(this.props.children);
+    }
+    if (e.keyCode === 13 && this.props.children === "=") {
+      this.props.handleClick(this.props.children);
+    }
   };
 
   render() {
