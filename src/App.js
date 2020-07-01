@@ -29,7 +29,12 @@ class App extends React.Component {
   };
 
   handleEqual = () => {
-    this.setState({ result: evaluate(this.state.result).toFixed(9) });
+    let equationResult = evaluate(this.state.result);
+    if (Number.isInteger(equationResult)) {
+      this.setState({ result: evaluate(this.state.result).toFixed(0) });
+    } else {
+      this.setState({ result: evaluate(this.state.result).toFixed(2) });
+    }
   };
 
   render() {
