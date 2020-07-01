@@ -21,6 +21,11 @@ class App extends React.Component {
     if (val === String.fromCharCode(247)) {
       val = "/";
     }
+    if (
+      this.state.result === "0" &&
+      (val === "/" || val === "*" || val === "-" || val === "+")
+    )
+      return;
     if (this.state.result === "0" || this.state.result === 0) {
       this.setState({ result: val });
     } else {

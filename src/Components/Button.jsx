@@ -48,13 +48,4 @@ class Button extends React.Component {
   }
 }
 
-// const Button = (props) => (
-//   <div
-//     className={`btn-wrapper ${isOperator(props.children) ? "operator" : null}`}
-//     onClick={() => props.handleClick(props.children)}
-//   >
-//     {props.children}
-//   </div>
-// );
-
 export default Button;

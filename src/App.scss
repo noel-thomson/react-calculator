@@ -16,5 +16,10 @@
         display: flex;
       }
     }
+    @media (max-width: 450px) {
+      .calc-wrapper {
+        width: 300px;
+      }
+    }
   }
 }

@@ -26,9 +26,3 @@ export class ClearButton extends React.Component {
 }
 
 export default ClearButton;
-
-// const ClearButton = (props) => (
-//   <button className="clear-btn-wrapper" onClick={props.handleClear}>
-//     AC
-//   </button>
-// );
