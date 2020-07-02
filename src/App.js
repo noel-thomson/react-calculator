@@ -37,7 +37,7 @@ class App extends React.Component {
   };
 
   handleEqual = () => {
-    let regex = /[/*\-+]*$/;
+    let regex = /[/*\-+]+$/;
     if (regex.test(this.state.result)) {
       this.setState({ result: this.state.result.replace(regex, "") });
     }
