@@ -37,6 +37,10 @@ class App extends React.Component {
   };
 
   handleEqual = () => {
+    let regex = /[/*-+]*$/;
+    if (regex.test(this.state.result)) {
+      this.setState({ result: this.state.result.replace(regex, "") });
+    }
     let equationResult = evaluate(this.state.result);
     if (Number.isInteger(equationResult)) {
       this.setState({ result: evaluate(this.state.result).toFixed(0) });
