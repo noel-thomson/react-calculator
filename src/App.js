@@ -83,6 +83,10 @@ class App extends React.Component {
             <ClearButton handleClear={() => this.setState({ result: "0" })} />
           </div>
         </header>
+        <footer>
+          <p>React Calculator</p>
+          <p>&copy; 2020 Noel Thomson</p>
+        </footer>
       </div>
     );
   }
