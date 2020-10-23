@@ -15,6 +15,9 @@
       .row {
         display: flex;
       }
+      .clear-btn-wrapper:focus {
+        outline: none;
+      }
     }
     @media (max-width: 450px) {
       .calc-wrapper {
